@@ -1,0 +1,15 @@
+<div class="container mx-auto mt-5">
+  <div *ngIf="!registeMode" class="flex flex-col gap-5 items-center justify-center gap-2">
+    <h1 class="text-3xl font-bold italic">Find New Friends</h1>
+    <p class="leading-3 text-gray-700">Explore by your preffered attributes.. all you need to do is sign up!</p>
+    <div class="text-center flex gap-2">
+      <button class="bg-blue-500 text-white rounded-sm px-2 py-1" (click)="registerToggle()">Register</button>
+      <button class="bg-gray-200 black border-blue-500 rounded-sm px-2 py-1">Learn more</button>
+    </div>
+  </div>
+  <div  *ngIf="registeMode" class="container mx-auto">
+      <div class="flex flex-col items-center justify-center">
+         <app-register (cancelRegisteration)="cancelRegister($event)"></app-register>
+      </div>
+  </div>
+</div>

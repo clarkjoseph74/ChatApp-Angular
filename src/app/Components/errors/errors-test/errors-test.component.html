@@ -1,0 +1,15 @@
+<div class="flex flex-col md:flex-row gap-4 items-center justify-center p-2">
+<button class="bg-red-800 text-white px-3 py-1 rounded-md" (click)="get404Error()">Error 404</button>
+<button class="bg-red-800 text-white px-3 py-1 rounded-md" (click)="get400Error()">Error 400 BR</button>
+<button class="bg-red-800 text-white px-3 py-1 rounded-md" (click)="get500Error()">Error 500 IE</button><button class="bg-red-800 text-white px-3 py-1 rounded-md" (click)="get401Error()">Error 401 Auth</button>
+ <button class="bg-red-800 text-white px-3 py-1 rounded-md" (click)="get400ValidationError()">ValidationError</button>
+</div>
+
+
+<h2 class="text-red-500">
+</h2>
+<ul *ngIf="validationErrors.length > 0">
+  <li *ngFor="let detail of validationErrors">
+  * {{detail}}
+  </li>
+</ul>

@@ -1,0 +1,6 @@
+<div class="flex  flex-row flex-wrap items-center justify-center gap-4">
+  <div *ngFor="let user of members" class="w-[200px] bg-red-400" >
+    <app-member-card [member]="user"></app-member-card>
+
+  </div>
+</div>
