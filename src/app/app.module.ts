@@ -25,6 +25,7 @@ import { errorInterceptor } from './Interceptors/error.interceptor';
 import { NotFoundComponent } from './Components/errors/not-found/not-found.component';
 import { ServerErrorComponent } from './Components/errors/server-error/server-error.component';
 import { MemberCardComponent } from './Components/member-card/member-card.component';
+import { IconsModule } from './Modules/icons/icons.module';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { MemberCardComponent } from './Components/member-card/member-card.compon
     HttpClientModule,
     FormsModule,
     SharedModule,
+    IconsModule,
   ],
   providers: [provideHttpClient(withInterceptors([errorInterceptor]))],
   bootstrap: [AppComponent],
