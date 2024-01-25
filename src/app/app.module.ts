@@ -26,6 +26,7 @@ import { NotFoundComponent } from './Components/errors/not-found/not-found.compo
 import { ServerErrorComponent } from './Components/errors/server-error/server-error.component';
 import { MemberCardComponent } from './Components/member-card/member-card.component';
 import { IconsModule } from './Modules/icons/icons.module';
+import { jwtInterceptor } from './Interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,9 @@ import { IconsModule } from './Modules/icons/icons.module';
     SharedModule,
     IconsModule,
   ],
-  providers: [provideHttpClient(withInterceptors([errorInterceptor]))],
+  providers: [
+    provideHttpClient(withInterceptors([errorInterceptor, jwtInterceptor])),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
