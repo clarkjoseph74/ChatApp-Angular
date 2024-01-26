@@ -1,0 +1,12 @@
+<div class="container mx-auto mt-4 flex flex-col items-center justify-center">
+  <div class="  bg-gray-100">
+    <img [src]="images[selectedImageIndex]" class="max-w-full h-[240px] w-[240px] object-cover" alt="Selected Image">
+  </div>
+  <div class="w-1/2">
+    <div class="flex justify-center items-center">
+      <div *ngFor="let image of images; let i = index" class="" (click)="selectImage(i)">
+        <img [src]="image" class="max-w-full cursor-pointer h-[60px] w-[60px] object-cover m-0" [class.border-4]="i === selectedImageIndex">
+      </div>
+    </div>
+  </div>
+</div>

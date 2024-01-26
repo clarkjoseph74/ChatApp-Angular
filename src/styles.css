@@ -2,3 +2,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.icon-btn {
+  background: rgb(59, 130, 246);
+  padding: 4px 6px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-btn:hover {
+  background: rgb(255, 255, 255);
+  padding: 4px 6px;
+  border-radius: 8px;
+  color: rgb(59, 130, 246);
+}
+
+.txt-btn {
+  border: 1px solid lightgray;
+  padding: 4px 6px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt-btn:hover {
+  background: rgb(255, 255, 255);
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+.mat-sidenav-container,
+.mat-sidenav-content,
+.mat-tab-body-content {
+  transform: none !important;
+}

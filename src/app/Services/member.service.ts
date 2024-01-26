@@ -14,6 +14,6 @@ export class MemberService {
     return this.http.get<Member[]>(this.apiUrl + 'users');
   }
   getMember(username: string) {
-    return this.http.get<Member>(this.apiUrl + 'users/' + username);
+    return this.http.get<Member>(this.apiUrl + 'users/name/' + username);
   }
 }

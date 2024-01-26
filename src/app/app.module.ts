@@ -25,8 +25,11 @@ import { errorInterceptor } from './Interceptors/error.interceptor';
 import { NotFoundComponent } from './Components/errors/not-found/not-found.component';
 import { ServerErrorComponent } from './Components/errors/server-error/server-error.component';
 import { MemberCardComponent } from './Components/member-card/member-card.component';
-import { IconsModule } from './Modules/icons/icons.module';
 import { jwtInterceptor } from './Interceptors/jwt.interceptor';
+import { IconsModule } from './Modules/icons/icons.module';
+import { GalleryComponent } from '@daelmaak/ngx-gallery';
+import { ImageGalleryComponent } from './Components/image-gallery/image-gallery.component';
+import { MemberEditComponent } from './Components/member-edit/member-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { jwtInterceptor } from './Interceptors/jwt.interceptor';
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
+    ImageGalleryComponent,
+    MemberEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,7 @@ import { jwtInterceptor } from './Interceptors/jwt.interceptor';
     FormsModule,
     SharedModule,
     IconsModule,
+    GalleryComponent,
   ],
   providers: [
     provideHttpClient(withInterceptors([errorInterceptor, jwtInterceptor])),
