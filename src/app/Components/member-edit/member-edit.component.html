@@ -1,1 +1,77 @@
-<p>member-edit works!</p>
+<h1 *ngIf="member.knownAs; else usernameHeader" class="text-3xl font-bold">{{member.knownAs | titlecase}}</h1>
+<ng-template #usernameHeader>
+  <h1 class="text-3xl font-bold">{{member.username | titlecase}}</h1>
+</ng-template>
+
+
+
+<div class="flex flex-col items-center justify-center md:flex-row md:items-start md:justify-center mt-5" *ngIf="member">
+
+  <mat-card class="w-[300px] ">
+    <img matCardImage [src]="member.imageUrl || '../../../../assets/Images/user.png'" alt="{{member.username}}"
+      class="m-10">
+    <mat-card-content>
+
+      <div class="flex items-center justify-start gap-2">
+
+      </div>
+      <div class="flex items-center justify-start gap-2">
+        <strong>Age : </strong>
+        <p>{{member.age }} Years old</p>
+      </div>
+      <div class="flex items-center justify-start gap-2">
+        <strong>Member since : </strong>
+        <p>{{member.createdAt | date:"dd-MM-YYYY"}}</p>
+      </div>
+      <div class="flex items-center justify-start gap-2">
+        <div class="bg-green-500 h-[10px] w-[10px] rounded-full"></div>
+        <strong>Last Active : </strong>
+        <p>{{member.lastActive | date:"hh:mm a dd-MM-YYYY"}}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="!editProfileForm.dirty" type="submit" form="editProfile" class="disabled:bg-gray-400 disabled:text-black disabled:cursor-not-allowed w-full txt-btn bg-blue-400 hover:text-blue-500 mr-2"><i-feather name="save"
+          style="width: 20px; height: 20px;" class="mr-2"></i-feather>Save Changes</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-tab-group class="flex-1 ml-3">
+    <mat-tab label="About {{member.username | titlecase}}" mat-alig>
+      <div class="bg-yellow-100 p-4 rounded-sm" *ngIf="editProfileForm.dirty">
+        <p><strong>Informations : </strong> You have made some changes. Any unsaved changes will be lost.</p>
+      </div>
+      <div class="mx-11 my-8">
+        <h4 class="text-2xl font-semibold mb-4">Member Information</h4>
+        <form #editProfileForm="ngForm" (ngSubmit)="updateInfo()" id="editProfile">
+
+          <strong>Location : </strong>
+          <div class="flex flex-col md:flex-row items-center justify-start">
+            <label for="city">City : </label>
+            <input [(ngModel)]="member.city" type="text" name="city" class="bg-gray-200 rounded-md mx-2 outline-none px-2 py-[1px] " autocomplete="off"/>
+            <label for="country">Country : </label>
+            <input [(ngModel)]="member.country" type="text" name="country" class="bg-gray-200 rounded-md mx-2 outline-none px-2 py-[1px] " autocomplete="off"/>
+          </div>
+          <h4 class="text-2xl font-semibold mb-4"></h4>
+          <div class="flex flex-col gap-4">
+            <label for="bio">Bio : </label>
+            <textarea [(ngModel)]="member.bio" name="bio" rows="3"  cols="80" class="bg-gray-200 rounded-md mx-2 outline-none px-2 py-[1px] "></textarea>
+            <label for="interests">Interests : </label>
+            <textarea [(ngModel)]="member.interests" name="interests" rows="3"  cols="80" class="bg-gray-200 rounded-md mx-2 outline-none px-2 py-[1px] "></textarea>
+            <p><strong>Date of birth : </strong><input [(ngModel)]="member.dateOfBirth" type="date" name="dateOfBirth"
+              class="bg-gray-200 rounded-md mx-2 outline-none px-2 py-[1px] " autocomplete="off" /></p>
+              <p><strong>Gender : </strong>{{member.gender=== null ? "No gender yet" : member.gender }}</p>
+            </div>
+
+          </form>
+          </div>
+          <!-- Comment -->
+        </mat-tab>
+    <mat-tab label="{{member.username | titlecase}} Photos ">
+
+      <app-edit-photos [member]=member></app-edit-photos>
+
+
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

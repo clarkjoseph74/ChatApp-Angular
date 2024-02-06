@@ -11,7 +11,7 @@ import { GalleryItem } from '@daelmaak/ngx-gallery';
 })
 export class MemberDetailComponent implements OnInit {
   member: Member = {} as Member;
-  images: string[] = ['../../../../assets/Images/user.png'];
+  images: string[] = [];
   constructor(
     private memberService: MemberService,
     private route: ActivatedRoute
@@ -27,7 +27,7 @@ export class MemberDetailComponent implements OnInit {
       .subscribe({
         next: (res) => {
           this.member = res;
-          this.images.push(this.member.imageUrl);
+          res.photos.map((photo) => this.images.push(photo.url));
         },
         complete: () => {},
       });

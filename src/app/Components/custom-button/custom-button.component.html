@@ -1,0 +1,6 @@
+<button type="button"
+  class="flex items-center justify-center gap-1 px-2 py-1 rounded-md text-white hover:text-red-700 hover:bg-gray-100 bg-red-500 cursor-pointer "
+  [ngClass]="['bg-cyan-300']"
+  (click)="clickAction()">
+  <feather-icon [name]="IconName"></feather-icon> {{text}}
+</button>

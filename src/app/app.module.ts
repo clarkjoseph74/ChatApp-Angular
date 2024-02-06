@@ -30,6 +30,10 @@ import { IconsModule } from './Modules/icons/icons.module';
 import { GalleryComponent } from '@daelmaak/ngx-gallery';
 import { ImageGalleryComponent } from './Components/image-gallery/image-gallery.component';
 import { MemberEditComponent } from './Components/member-edit/member-edit.component';
+import { loadingInterceptor } from './Interceptors/loading.interceptor';
+import { EditPhotosComponent } from './Components/edit-photos/edit-photos.component';
+import { CustomButtonComponent } from './components/custom-button/custom-button.component';
+import { CustomButtonDirective } from './Directives/custom-button.directive';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,9 @@ import { MemberEditComponent } from './Components/member-edit/member-edit.compon
     MemberCardComponent,
     ImageGalleryComponent,
     MemberEditComponent,
+    EditPhotosComponent,
+    CustomButtonComponent,
+    CustomButtonDirective,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,9 @@ import { MemberEditComponent } from './Components/member-edit/member-edit.compon
     GalleryComponent,
   ],
   providers: [
-    provideHttpClient(withInterceptors([errorInterceptor, jwtInterceptor])),
+    provideHttpClient(
+      withInterceptors([errorInterceptor, jwtInterceptor, loadingInterceptor])
+    ),
   ],
   bootstrap: [AppComponent],
 })

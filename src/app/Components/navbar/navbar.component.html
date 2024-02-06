@@ -28,8 +28,7 @@
           <a routerLink="/lists" routerLinkActive=" text-orange-400 font-bold" class="text-white hover:text-orange-500 transition-all duration-300">Lists</a>
           <a routerLink="/messages" routerLinkActive=" text-orange-400 font-bold" class="text-white hover:text-orange-500 transition-all duration-300">Messages</a>
             <a href="#" class="text-white hover:text-orange-500 transition-all duration-300" (click)="logout()">Logout</a>
-            <a href="#" class="text-white hover:text-orange-500 transition-all duration-300" >Welcome, {{user?.username | titlecase}}</a>
-
+            <a routerLink="/member/edit" class="text-white hover:text-orange-500 transition-all duration-300" >Profile, {{user?.username | titlecase}}</a>
 
         </div>
         <div class="md:flex items-center space-x-4">

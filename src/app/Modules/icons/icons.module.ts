@@ -8,6 +8,9 @@ import {
   Anchor,
   User,
   MessageCircle,
+  Save,
+  Trash,
+  XCircle,
 } from 'angular-feather/icons';
 const icons = {
   Camera,
@@ -16,6 +19,9 @@ const icons = {
   Anchor,
   User,
   MessageCircle,
+  Save,
+  Trash,
+  XCircle,
 };
 
 @NgModule({
