@@ -1,14 +1,28 @@
-<form #registerForm="ngForm" (ngSubmit)="register()">
+<div  class="flex flex-col items-center justify-center">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
   <h2 class="text-orange-700 font-bold italic text-center text-2xl mt-6">Sign Up</h2>
   <div>
-    <input type="text" class=" mt-5 border-2 border-blue-500 outline-none px-2 py-1 focus:bg-blue-500 focus:text-white transition-all duration-700 rounded-md" name="username" [(ngModel)]="model.username" placeholder="username">
+    <input [ngClass]="{'border-red-800 focus:bg-red-800': username?.errors && username?.touched}" type="text" class=" mt-5 border-2 border-blue-500 outline-none px-2 py-1 focus:bg-blue-500 focus:text-white transition-all duration-700 rounded-md" name="username" formControlName="username" placeholder="username">
+
   </div>
   <div>
-    <input type="password" class=" mt-5 border-2 border-blue-500 outline-none px-2 py-1 focus:bg-blue-500 focus:text-white transition-all duration-700 rounded-md" name="password" [(ngModel)]="model.password" placeholder="password">
+    <input  [ngClass]="{'border-red-800 focus:bg-red-800': password?.errors && password?.touched}" type="password" class=" mt-5 border-2 border-blue-500 outline-none px-2 py-1 focus:bg-blue-500 focus:text-white transition-all duration-700 rounded-md" name="password" formControlName="password" placeholder="password">
+
   </div>
-  <div class="flex gap-4 items-center justify-center mt-5">
+  <div>
+    <input
+     [ngClass]="{'border-red-800 focus:bg-red-800': confirmPassword?.errors && confirmPassword?.touched}"
+    type="password"
+      class=" mt-5 border-2 border-blue-500 outline-none px-2 py-1 focus:bg-blue-500 focus:text-white transition-all duration-700 rounded-md"
+      name="confirmPassword" formControlName="confirmPassword" placeholder="Confirm password">
+
+
+  </div>
+  <div   class="flex gap-4 items-center justify-center mt-5">
     <button type="submit" class="bg-blue-500 text-white rounded-sm px-2 py-1">Register</button>
     <button type="button" class="bg-gray-200 black border-blue-500 rounded-sm px-2 py-1" (click)="cancel()">Cancel</button>
   </div>
 
 </form>
+
+</div>

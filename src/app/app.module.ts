@@ -10,7 +10,7 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { NavbarComponent } from './Components/navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './Components/home/home.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { MemberListComponent } from './Components/members/member-list/member-list.component';
@@ -32,8 +32,8 @@ import { ImageGalleryComponent } from './Components/image-gallery/image-gallery.
 import { MemberEditComponent } from './Components/member-edit/member-edit.component';
 import { loadingInterceptor } from './Interceptors/loading.interceptor';
 import { EditPhotosComponent } from './Components/edit-photos/edit-photos.component';
-import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 import { CustomButtonDirective } from './Directives/custom-button.directive';
+import { CustomButtonComponent } from './Components/custom-button/custom-button.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +61,7 @@ import { CustomButtonDirective } from './Directives/custom-button.directive';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     IconsModule,
     GalleryComponent,
