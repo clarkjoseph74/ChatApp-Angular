@@ -34,6 +34,7 @@ import { loadingInterceptor } from './Interceptors/loading.interceptor';
 import { EditPhotosComponent } from './Components/edit-photos/edit-photos.component';
 import { CustomButtonDirective } from './Directives/custom-button.directive';
 import { CustomButtonComponent } from './Components/custom-button/custom-button.component';
+import { TextInputComponent } from './Forms/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CustomButtonComponent } from './Components/custom-button/custom-button.
     EditPhotosComponent,
     CustomButtonComponent,
     CustomButtonDirective,
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,

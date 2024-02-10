@@ -13,6 +13,7 @@ import { UploaderModule } from 'angular-uploader';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadModule } from 'primeng/fileupload';
+import { MatPaginatorModule } from '@angular/material/paginator';
 library.add(faHeart);
 @NgModule({
   declarations: [],
@@ -30,6 +31,7 @@ library.add(faHeart);
     BrowserModule,
     BrowserAnimationsModule,
     FileUploadModule,
+    MatPaginatorModule,
   ],
   exports: [
     CommonModule,
@@ -42,6 +44,7 @@ library.add(faHeart);
     BrowserModule,
     BrowserAnimationsModule,
     FileUploadModule,
+    MatPaginatorModule,
   ],
 })
 export class SharedModule {}
